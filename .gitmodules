@@ -1,0 +1,3 @@
+[submodule "tictactoe-app"]
+	path = tictactoe-app
+	url = ./tictactoe-app
