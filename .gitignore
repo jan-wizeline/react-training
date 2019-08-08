@@ -1,1 +1,25 @@
 .DS_Store
+
+./tictactoe-app/node-modules
+
+# dependencies
+/tictactoe-app/node_modules
+/tictactoe-app/.pnp
+/tictactoe-app/.pnp.js
+
+# testing
+/tictactoe-app//coverage
+
+# production
+/tictactoe-app//build
+
+# misc
+/tictactoe-app/.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+/tictactoe-app/npm-debug.log*
+/tictactoe-app/yarn-debug.log*
+/tictactoe-app/yarn-error.log*
