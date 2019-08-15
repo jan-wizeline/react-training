@@ -45,43 +45,55 @@ var app = {
 var count = 0;
 var btnId = "btn-id";
 var addOne = function addOne() {
-  console.log('addOne');
+  console.log('addOne', count);
+  count++;
+  renderCounterApp();
 };
 
 var minusOne = function minusOne() {
   console.log('minusOne');
+  count--;
+  renderCounterApp();
 };
 
 var reset = function reset() {
   console.log('Reset');
+  count = 0;
+  renderCounterApp();
 };
 
-var templateThree = React.createElement(
-  'div',
-  null,
-  React.createElement(
-    'h1',
-    null,
-    'Count: ',
-    count
-  ),
-  React.createElement(
-    'button',
-    { onClick: addOne },
-    ' +1 '
-  ),
-  React.createElement(
-    'button',
-    { onClick: minusOne },
-    ' -1 '
-  ),
-  React.createElement(
-    'button',
-    { onClick: reset },
-    'reset'
-  )
-);
-console.log(templateThree);
+//JSX does not have built in data binding 
 var appRoot = document.getElementById("app");
 
-ReactDOM.render(templateThree, appRoot);
+var renderCounterApp = function renderCounterApp() {
+
+  var templateThree = React.createElement(
+    'div',
+    null,
+    React.createElement(
+      'h1',
+      null,
+      'Count: ',
+      count
+    ),
+    React.createElement(
+      'button',
+      { onClick: addOne },
+      ' +1 '
+    ),
+    React.createElement(
+      'button',
+      { onClick: minusOne },
+      ' -1 '
+    ),
+    React.createElement(
+      'button',
+      { onClick: reset },
+      'reset'
+    )
+  );
+
+  ReactDOM.render(templateThree, appRoot);
+};
+
+renderCounterApp();
