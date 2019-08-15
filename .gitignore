@@ -1,8 +1,11 @@
 .DS_Store
 
 # dependencies
-./tictactoe-app/node-modules
+./tictactoe-app/node_modules
 /tictactoe-app/node_modules
+
+./indecision-app/node_modules
+/indecision-app/node_modules
 
 # testing
 ./tictactoe-app/coverage
