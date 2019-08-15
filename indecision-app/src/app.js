@@ -19,37 +19,31 @@ const template = (
   </div>
 );
 
-// const userName = 'Jan';
-// const userAge = 24;
-// const userLocation = 'Vietnam';
+let count = 0;
+const btnId = "btn-id";
+const addOne = () => {
+  console.log('addOne');
 
-const user = {
-  name: 'Jan',
-  age: 26,
-  location: 'Vietnam'
 }
 
-function getLocation(location) {
-  if (location) {
-    return <p>Location: {location}</p>;
-  } 
-  // else {
-  //   return <p>Location: Unknown</p>;
-  // } 
+const minusOne = () => {
+  console.log('minusOne');
 }
 
-// Create a templateTwo const JSX expression
-const templateTwo = (
+const reset = () => {
+  console.log('Reset');
+}
+
+const templateThree = (
   <div>
-    {/* <p>Age: {user.age }</p> */}
-    {/* <p>Location: {getLocation(user.location)}</p> */}
-
-    <h1>{user.name ? user.name : 'Anonymous'}</h1>
-    {(user.age && user.age >= 18) && <p>Age: {user.age}</p>}
-    { getLocation(user.location) }
+    <h1>Count: {count}</h1>
+    {/* <button id={btnId} className="button" onClick={() => console.log('test')}>+1</button> */}
+    <button onClick={addOne}> +1 </button>
+    <button onClick={minusOne}> -1 </button>
+    <button onClick={reset}>reset</button>
   </div>
 );
-
+console.log(templateThree);
 const appRoot = document.getElementById("app");
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateThree, appRoot);
