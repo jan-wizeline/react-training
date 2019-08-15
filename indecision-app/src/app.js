@@ -1,13 +1,13 @@
 console.log("Inside app.js");
 
-var app = {
+const app = {
   title: 'Indecision App',
   subtitle: 'Put your life in the hands of a compute',
   options: ['One', 'Two']
 }
 
 // JSX - Javascript XML
-var template = (
+const template = (
   <div>
     <h1>{app.title}</h1>
     {app.subtitle && <p>{app.subtitle}</p>}
@@ -19,11 +19,11 @@ var template = (
   </div>
 );
 
-// var userName = 'Jan';
-// var userAge = 24;
-// var userLocation = 'Vietnam';
+// const userName = 'Jan';
+// const userAge = 24;
+// const userLocation = 'Vietnam';
 
-var user = {
+const user = {
   name: 'Jan',
   age: 26,
   location: 'Vietnam'
@@ -38,8 +38,8 @@ function getLocation(location) {
   // } 
 }
 
-// Create a templateTwo var JSX expression
-var templateTwo = (
+// Create a templateTwo const JSX expression
+const templateTwo = (
   <div>
     {/* <p>Age: {user.age }</p> */}
     {/* <p>Location: {getLocation(user.location)}</p> */}
@@ -50,6 +50,6 @@ var templateTwo = (
   </div>
 );
 
-var appRoot = document.getElementById("app");
+const appRoot = document.getElementById("app");
 
 ReactDOM.render(template, appRoot);
