@@ -1,87 +1,37 @@
 'use strict';
 
-console.log("Inside app.js");
+var visibility = false;
 
-var app = {
-  title: 'Indecision App',
-  subtitle: 'Put your life in the hands of a compute',
-  options: []
-};
-
-var onFormSubmit = function onFormSubmit(e) {
-  e.preventDefault();
-  var option = e.target.elements.option.value;
-  if (option) {
-    app.options.push(option);
-    e.target.elements.option.value = '';
-    render();
-  }
-};
-
-var onRemoveAll = function onRemoveAll() {
-  app.options = [];
+var toggleVisibility = function toggleVisibility() {
+  visibility = !visibility;
   render();
 };
 
-var appRoot = document.getElementById("app");
-
 var render = function render() {
-  // JSX - Javascript XML
-  var template = React.createElement(
+  var jsx = React.createElement(
     'div',
     null,
     React.createElement(
       'h1',
       null,
-      app.title
-    ),
-    app.subtitle && React.createElement(
-      'p',
-      null,
-      app.subtitle
-    ),
-    React.createElement(
-      'p',
-      null,
-      app.options.length > 0 ? 'Here are your options' : 'No options'
-    ),
-    React.createElement(
-      'p',
-      null,
-      app.options.length
+      'Visibility Toggle'
     ),
     React.createElement(
       'button',
-      { onClick: onRemoveAll },
-      'Remove All'
+      { onClick: toggleVisibility },
+      visibility ? 'Hide details' : 'Show details'
     ),
-    React.createElement(
-      'ol',
+    visibility && React.createElement(
+      'div',
       null,
       React.createElement(
-        'li',
+        'p',
         null,
-        'Item 1'
-      ),
-      React.createElement(
-        'li',
-        null,
-        'Item 2'
-      )
-    ),
-    React.createElement(
-      'form',
-      { onSubmit: onFormSubmit },
-      React.createElement('input', { type: 'text', name: 'option' }),
-      React.createElement(
-        'button',
-        null,
-        'Add Option'
+        'Hey. These are some details you can now see!'
       )
     )
   );
-
-  ReactDOM.render(template, appRoot);
+  ReactDOM.render(jsx, document.getElementById("app"));
 };
 
 render();
